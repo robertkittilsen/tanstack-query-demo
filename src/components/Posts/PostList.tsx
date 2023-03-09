@@ -1,10 +1,11 @@
 import { ListItem, Text, List, Center, Spinner } from "@chakra-ui/react";
-import { Post, useDummyQuery } from '../../api/queries/usePostsQuery';
+import { Post, useDummyQuery, usePostsQuery } from '../../api/queries/usePostsQuery';
 
 function PostList() {
   // TODO: use usePostsQuery
+  const { data, isLoading, isError } = usePostsQuery()
 
-  const { data, isLoading, isError } = useDummyQuery()
+  /* const { data, isLoading, isError } = useDummyQuery() */
 
   if (isLoading) {
     return (

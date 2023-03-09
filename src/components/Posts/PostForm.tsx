@@ -11,9 +11,14 @@ const PostForm = () => {
   const queryClient = useQueryClient();
 
   // TODO: useMutation med createPost, onSuccess: legg til ny post for QueryKey "posts"
+  const { mutate, status } = useMutation({
+    mutationFn: createPost,
+    onSuccess: (newPost: Post) =>
+    queryClient.setQueryData(['posts'], (oldPosts?: Post[]) => oldPosts ? [newPost, ...oldPosts] : [newPost])
+  })
 
-  const mutate = (post: Post) => {console.warn(post)};
-  const status = "error";
+  /* const mutate = (post: Post) => {console.warn(post)};
+  const status = "error"; */
 
   async function createPost(post: Post) {
     return await fetch("https://jsonplaceholder.typicode.com/posts", {

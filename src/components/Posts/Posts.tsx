@@ -3,13 +3,14 @@ import { Heading } from "@chakra-ui/layout";
 import PostList from "./PostList";
 import PostForm from "./PostForm";
 import { useQueryClient } from '@tanstack/react-query';
-import { useDummyQuery } from '../../api/queries/usePostsQuery';
+import { useDummyQuery, usePostsQuery } from '../../api/queries/usePostsQuery';
 
 function Posts() {
 
   // TODO refetch, status, fetchStatus med usePostsQuery
+  const { refetch, status, fetchStatus } = usePostsQuery()
 
-  const { refetch, status, fetchStatus } = useDummyQuery();
+  /* const { refetch, status, fetchStatus } = useDummyQuery(); */
 
   const queryClient = useQueryClient();
 
