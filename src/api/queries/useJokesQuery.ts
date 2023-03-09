@@ -23,4 +23,4 @@ const JOKES_URL =
   "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,racist,sexist,explicit&amount=10";
 
 export const useJokesQuery = () =>
-  useQuery<JokeResult>(["jokes"], () => fetcher(JOKES_URL));
+  useQuery<JokeResult>(['jokes'], () => fetcher(JOKES_URL));
