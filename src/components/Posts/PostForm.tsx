@@ -8,7 +8,7 @@ const PostForm = () => {
   const [title, setTitle] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
-  const queryClient = useQueryClient();
+  // TODO queryClient
 
   // TODO: useMutation med createPost, onSuccess: legg til ny post for QueryKey "posts"
 
