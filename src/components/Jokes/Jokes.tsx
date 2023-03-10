@@ -36,10 +36,6 @@ function Jokes() {
 
   const queryClient = useQueryClient();
 
-  const invalidate = () => {
-    queryClient.invalidateQueries(['jokes']);
-  };
-
   const reset = () => {
     queryClient.resetQueries(['jokes']);
   };
@@ -95,8 +91,7 @@ function Jokes() {
         <Highlight
           query={["true", "false"]}
           styles={{
-            bg:
-              !!data ? "green.300" : "red.300"
+            bg: !!data ? "green.300" : "red.300",
           }}
         >
           {JSON.stringify(!!data)}
@@ -122,14 +117,11 @@ function Jokes() {
         </AccordionItem>
       </Accordion>
       <ButtonGroup mt={4}>
-        <Button onClick={invalidate} size="xs">
-          Invalider cache
+        <Button onClick={refetchJokes} size="xs">
+          Hent på nytt
         </Button>
         <Button onClick={reset} size="xs">
           Reset
-        </Button>
-        <Button onClick={refetchJokes} size="xs">
-          Hent på nytt
         </Button>
       </ButtonGroup>
 
