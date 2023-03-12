@@ -10,7 +10,7 @@ export type Post = {
 
 const POSTS_URL = "https://jsonplaceholder.typicode.com/posts";
 
-// TODO lag usePostsQuery med useQuery som bruker query key 'posts' og fetcher til i hente POSTS_URL
+// TODO lag usePostsQuery med useQuery som bruker query key 'posts' og fetcher til å hente POSTS_URL
 
 
 export const useDummyQuery = () => {
